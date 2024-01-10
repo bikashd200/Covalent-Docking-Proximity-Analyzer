@@ -28,11 +28,12 @@ $for d in poses/*/; do (cd "$d" && obabel ligands-dH.mol2 -O ligands-hH.sdf -p 7
 ## prepare input file to run bath array jobs
 $python write_input_txt.py poses
 
-## subtract covalent linker from sdf file. Basically, Here we want only covalent linker from the docked pose to calculte proximity between covalent linker and Cystein residue of the protein
+## subtract covalent linker from sdf file. Basically, Here we want only covalent linker from the docked pose to calculte proximity between covalent linker and Cystein residue of the protein. Based on demand you can add warheads in "warheads_subtract.py": core and sub_core smarts. I tried to cover few common warheads. 
 sbatch --array=1-50 cov_subtract.sh
 ## Activate prolif environment, if not
 $conda activate prolif
 ## Calculate proximity
+### Distance is set at 4 Angstrom, You can modify by going the prolif_cov.py at "class CustomHydrophobic(plf.interactions.Hydrophobic)" Generally, you can set the distance to any value between 3.5 - 5 angstrom. Change Residue number based on your protein in this file.
 $sbatch --array=1-50 slurmscriptfinal.sh
 ## Filter the poses which are close proximity of 4 Angstrom
 $sbatch --array=1-50 pose_filter.sh
