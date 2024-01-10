@@ -13,6 +13,9 @@ conda create -n prolif
 conda activate prolif
 conda install -c conda-forge prolif
 
+# Create multiple folders: poses, input_txt, log, subtract, output
+# prepare protein (protein.pdb) and keep it in the working directory, you can use a molecule as reference (ref.sdf) in the working directory.
+
 # Keep all individual docked pdbqt files from vina docking in the poses folder; You can use other formats also
 
 # To parallel processing split folder into multiple folders
