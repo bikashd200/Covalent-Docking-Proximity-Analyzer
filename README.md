@@ -1,4 +1,6 @@
 # Covalent-Docking-Proximity-Analyzer
+This Code is written by:
+## Bikash Debnath
 This code has been optimized in GCP slurm
 ## Requirements 
 1. RDKit
