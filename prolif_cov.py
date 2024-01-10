@@ -56,6 +56,7 @@ df_ID = df_ID.reset_index(drop=True)
 lig_suppl = list(plf.sdf_supplier(path))
 print('step7')
 # generate fingerprint
+## distance is set at 4 angstrom
 class CustomHydrophobic(plf.interactions.Hydrophobic):
     def __init__(self):
         super().__init__(distance=4.0)
@@ -72,7 +73,7 @@ iterator = tqdm(lig_suppl) if progress else lig_suppl
 del(lig_suppl)
 ifp = []
 for i, lig_mol in enumerate(iterator):
-	data = fp.generate(lig_mol, prot, residues=['CYS87.B'], return_atoms=True)
+	data = fp.generate(lig_mol, prot, residues=['CYS87.B'], return_atoms=True)  ## change residue number as per your protein
 	data["Frame"] = i
 	ifp.append(data)
 
