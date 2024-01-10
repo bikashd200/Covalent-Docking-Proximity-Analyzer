@@ -6,19 +6,20 @@ This code has been optimized in GCP slurm
 1. RDKit
 2. OpenBabel
 3. Prolif
+4. MDAnalysis
 
-# create a separate virtual environment
+## create a separate virtual environment
 conda create -n prolif
-# activate it
+## activate it
 conda activate prolif
 conda install -c conda-forge prolif
 
-# Create multiple folders: poses, input_txt, log, subtract, output
-# prepare protein (protein.pdb) and keep it in the working directory, you can use a molecule as reference (ref.sdf) in the working directory.
+## Create multiple folders: poses, input_txt, log, subtract, output
+## prepare protein (protein.pdb) and keep it in the working directory, you can use a molecule as reference (ref.sdf) in the working directory.
 
-# Keep all individual docked pdbqt files from vina docking in the poses folder; You can use other formats also
+## Keep all individual docked pdbqt files from vina docking in the poses folder; You can use other formats also
 
-# To parallel processing split folder into multiple folders
+## To parallel processing split folder into multiple folders
 
 $python folder_splitter1.py poses 50
 
