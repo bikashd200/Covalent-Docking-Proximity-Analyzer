@@ -37,7 +37,7 @@ sbatch --array=1-50 cov_subtract.sh
 ## Activate prolif environment, if not
 $conda activate prolif
 ## Calculate proximity
-### Distance is set at 4 Angstrom, You can modify by going the prolif_cov.py at "class CustomHydrophobic(plf.interactions.Hydrophobic)" Generally, you can set the distance to any value between 3.5 - 5 angstrom. Change Residue number based on your protein in this file.
+### Distance is set at 4 Angstrom, You can modify by going the "prolif_cov.py" at "class CustomHydrophobic(plf.interactions.Hydrophobic)" Generally, you can set the distance to any value between 3.5 - 5 angstrom. Change Residue number based on your protein in this file.
 $sbatch --array=1-50 slurmscriptfinal.sh
 ## Filter the poses which are close proximity of 4 Angstrom
 $sbatch --array=1-50 pose_filter.sh
