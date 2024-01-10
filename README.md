@@ -1,7 +1,11 @@
 # Covalent-Docking-Proximity-Analyzer
 This Code is written by:
 ## Bikash Debnath
-This code has been optimized in GCP slurm
+
+## Purpose:
+Covalent docking is a very time and cost consuming process. For any covalent binding, first molecule needs to bind at the active site as intact form, then if warhead is close enough to reactive resudue, then it forms covalent bond. On this principle, I used normal docking as docking, then used those docking poses in this analysis to find out warheads of which compounds (within top 3 poses) are acually docking proximity to reactive residue. Then filter those compounds and redock using covalent docking using choice of covalent docking methods.
+
+This code has been optimized in GCP slurm.
 ## Requirements 
 1. RDKit
 2. OpenBabel
