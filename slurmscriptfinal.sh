@@ -4,7 +4,7 @@
 ###############################################################################
 
 #SBATCH --job-name=Prolif
-#SBATCH --mail-user=bdebnath@championsoncology.com
+#SBATCH --mail-user=user@mail.com
 #SBATCH --mail-type=fail
 #SBATCH --time=03-12:00:00
 #SBATCH --nodes=1
