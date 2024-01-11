@@ -62,7 +62,7 @@ Filtered poses will be written in the "output" folder
 Contributions are welcome! If you have ideas for improvements or new features, please open an issue or submit a pull request.
 
 ## License
-This project is licensed under the  License - see the LICENSE file for details.
+This project is licensed under the  GNU General Public License v3.0 - see the LICENSE file for details.
 
 ## Acknowledgments
 Thanks to the contributor of ProLIF
