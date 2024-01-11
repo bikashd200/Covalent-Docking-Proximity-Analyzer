@@ -10,9 +10,6 @@ import math
 
 No_of_folders = int(sys.argv[2])
 
-#No_of_folders = 50
-#N = 10  # the number of files in seach subfolder folder
-
 
 def move_files(abs_dirname):
     """Move files into subdirectories."""

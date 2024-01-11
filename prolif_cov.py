@@ -14,13 +14,8 @@ with open(fname) as file:
 	lines = file.readlines()
 	lines = [line.rstrip() for line in lines]
 
-# load protein
-#prot = mda.Universe("/home/bdebnath_championsoncology_com/SiFt/rec.crg.pdb")
-#prot = plf.Molecule.from_mda(prot)
-#prot.n_residues
 
 filename_protein = lines[0]
-#filename_protein = "/home/bdebnath_championsoncology_com/MK14/test/2qd9-dock-prep-min.pdb"
 print('step1')
 u = mda.Universe(filename_protein, guess_bonds=True, vdwradii={"H": 0.98})
 print('step2')
@@ -34,7 +29,6 @@ prot = plf.Molecule.from_mda(u)
 print('step6')
 
 path = lines[1]
-#path = str("/home/bdebnath_championsoncology_com/MK14/test/ligands-hH.sdf")
 
 df_frame = PandasTools.LoadSDF(path, includeFingerprints=False)
 #frame = PandasTools.LoadSDF(my_sdf_file, includeFingerprints=False)
@@ -43,15 +37,8 @@ del(df_frame)
 #df_ID = df_ID[~df_ID['ID'].duplicated(keep='first')]
 print ('Total poses = ' + str(len(df_ID)))
 
-# load ligands
-#path = str("/home/bdebnath_championsoncology_com/MK14/test/ligands-hH.sdf")
-
-#path = str('C:/Users/Bikash Debnath/Documents/prolif/MK14/ligands-hH-cleaned.sdf')
-#df_ID['docking_score'] = df_ID['REMARK'].str[18:23]
 df_ID = df_ID.reset_index(drop=True)
 
-#path = plf.datafiles.datapath / "vina" / "vina_output.sdf"
-#lig_suppl = list(plf.mol2_supplier(path))
 
 lig_suppl = list(plf.sdf_supplier(path))
 print('step7')
@@ -86,7 +73,6 @@ df = fp.to_dataframe()
 df.columns = df.columns.droplevel(0)
 print(df.head())
 
-#path = str('C:/Users/Bikash Debnath/Documents/prolif/MK14/ligands-hH-cleaned.sdf')
 #print(df_ID.head())
 df_2 = [df_ID, df]
 df_3 = pd.concat(df_2, axis=1)
@@ -95,8 +81,6 @@ del(df_2)
 # load the reference
 
 path = lines[2]
-#path = str("/home/bdebnath_championsoncology_com/MK14/test/ref.sdf")
-#ref = mda.Universe("/home/bdebnath_championsoncology_com/topandbottom20poses/top/ref.sdf")
 lig_suppl = list(plf.sdf_supplier(path))
 #ref = plf.Molecule.from_mda(ref)
 # generate IFP
