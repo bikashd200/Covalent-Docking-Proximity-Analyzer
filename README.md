@@ -58,10 +58,10 @@ $sbatch --array=1-50 pose_filter.sh
 
 Filtered poses will be written in the "output" folder
 
-##Contributing
+## Contributing
 Contributions are welcome! If you have ideas for improvements or new features, please open an issue or submit a pull request.
 
-##License
+## License
 This project is licensed under the  License - see the LICENSE file for details.
 
 ## Acknowledgments
